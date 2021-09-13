@@ -1,0 +1,35 @@
+<div class="container">
+  <h3 class="container__food-title">Comida</h3>
+  <div class="container__food">
+    <div
+      *ngFor="let product of products | type: 'food'"
+      class="container__food-card"
+      (click)="onClick(product)"
+    >
+      <div class="container__food-card-img">
+        <img [src]="product.img" [alt]="product.name" />
+      </div>
+      <div class="container__food-card-info">
+        <p class="container__food-card-info-name">{{ product.name }}</p>
+        <p class="container__food-card-info-cost">${{ product.cost }}</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="container__drink-title">Bebida</h3>
+  <div class="container__drink">
+    <div
+      *ngFor="let product of products | type: 'drink'"
+      class="container__drink-card"
+      (click)="onClick(product)"
+    >
+      <div class="container__drink-card-img">
+        <img [src]="product.img" [alt]="product.name" />
+      </div>
+      <div class="container__drink-card-info">
+        <p class="container__drink-card-info-name">{{ product.name }}</p>
+        <p class="container__drink-card-info-cost">${{ product.cost }}</p>
+      </div>
+    </div>
+  </div>
+</div>
